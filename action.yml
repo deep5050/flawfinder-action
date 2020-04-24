@@ -1,0 +1,33 @@
+
+name: flawfinder-action
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Install falwfinder
+      run: sudo apt-get install flawfinder
+
+    - name: check flaws
+      run: |
+        echo checking flaws in your all c/cpp codes
+        flawfinder -HCc . > flawfinder.html
+    - name: Commit files
+      run: |
+        git add flawfinder.html
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "flawfinder report added" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
