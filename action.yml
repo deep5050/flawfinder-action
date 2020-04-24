@@ -1,5 +1,10 @@
 
 name: flawfinder-action
+description: 'runs security checks for all C/CPP files and pushes report back to master'
+author: 'deep5050'
+branding:
+  icon: check-circle
+  color: purple
 on:
   push:
     branches: [ master ]
