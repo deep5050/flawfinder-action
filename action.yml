@@ -1,38 +1,71 @@
+name: "flawfinder-action"
+author: deep5050
+description: "Find potential vulnerabilities in your C/C++ codes"
 
-name: flawfinder-action
-description: 'runs security checks for all C/CPP files and pushes report back to master'
-author: 'deep5050'
+inputs:
+  github_token:
+    description: "GITHUB_TOKEN secret < automatically provided by Github , you don't need to set up >"
+    required: true
+
+  report_type:
+    description: "Report type: text | HTML"
+    default: "html"
+    required: false
+
+  data_only:
+    description: "Don't display the headers and footers of the analysis."
+    default: "disable"
+    required: false
+
+  never_ignore:
+    description: "Never ignore security issues, even if they have an ``ignore'' directive in a comment."
+    default: "disable"
+    required: false
+
+  false_positive:
+    description: "Do not include hits that are likely to be false  positives. <see flawfinder documentations>"
+    default: "disable"
+    required: false
+
+  inputs_flag:
+    description: "Show only functions that obtain data from outside the program. this also sets minlevel to 0."
+    default: "disable"
+    required: false
+
+  dot_directories:
+    description: "Scan for files even in directories whose names begin with . (dot) "
+    default: "disable"
+    required: false
+
+  allow_link:
+    description: "Allow symbolic links."
+    default: "disable"
+    required: false
+
+  target_branch:
+    description: "Branch that the badge will target. Defaults to the current branch."
+    default: ""
+    required: false
+
+  pull_request_branch:
+    description: "Branch that the action will target on pull_request. Defaults to GITHUB_BASE_REF."
+    default: ""
+    required: false
+
+  target_repository:
+    description: "Repository that the report will be pushed on. Defaults to the current repository."
+    default: ""
+    required: false
+
+  pull_request_repository:
+    description: "Repository that the action will target on pull_request. Defaults to TARGET_REPOSITORY"
+    default: ""
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
 branding:
-  icon: check-circle
-  color: purple
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
-
-    - name: Install falwfinder
-      run: sudo apt-get install flawfinder
-
-    - name: check flaws
-      run: |
-        echo checking flaws in your all c/cpp codes
-        flawfinder -HCc . > flawfinder.html
-    - name: Commit files
-      run: |
-        git add flawfinder.html
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git commit -m "flawfinder report added" -a
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+  icon: "alert-octagon"
+  color: "red"
