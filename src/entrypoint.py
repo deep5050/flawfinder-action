@@ -40,14 +40,16 @@ out_file = ""
 
 
 def prepare_command():
-    global command = "flawfinder "
+    global command
+    global out_file
+    command = command + "flawfinder "
     # check every flags
     if REPORT_TYPE == 'html':
-        global out_file = "flawfinder_report.html"
+        out_file = "flawfinder_report.html"
         command = command + " --html"
 
     elif REPORT_TYPE == "text":
-        global out_file = "flawfinder_report.txt"
+        out_file = "flawfinder_report.txt"
 
     if DATA_ONLY == 'enable':
         command = command + " --dataonly"
@@ -69,11 +71,12 @@ def prepare_command():
 
 
 def run_flawfinder():
-    global command = global command + f" --columns --context --singleline . >{out_file}"
+    global command
+    command = command + f" --columns --context --singleline . >{out_file}"
     sp.call(command, shell=True)
 
 
-def commit_changes(files: list):
+def commit_changes():
     """Commits changes.
     """
     set_email = 'git config --local user.email "flawfinder-action@master"'
