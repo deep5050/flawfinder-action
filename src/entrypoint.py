@@ -30,7 +30,7 @@ REPORT_TYPE = os.environ['INPUT_REPORT_TYPE'] or 'html'
 DATA_ONLY = os.environ['INPUT_DATA_ONLY'] or 'disable'
 NEVER_IGNORE = os.environ['INPUT_NEVER_IGNORE'] or 'disable'
 FALSE_POSITIVE = os.environ['INPUT_FALSE_POSITIVE'] or 'disable'
-INPUT_FLAGS = os.environ['INPUT_INPUT_FLAG'] or 'disable'
+INPUTS_FLAG = os.environ['INPUT_INPUTS_FLAG'] or 'disable'
 DOT_DIR = os.environ['INPUT_DOT_DIRECTORIES'] or 'disable'
 ALLOW_LINK = os.environ['INPUT_ALLOW_LINK'] or 'disable'
 
@@ -60,7 +60,7 @@ def prepare_command():
     if FALSE_POSITIVE == "enable":
         command = command + " --falsepositive"
 
-    if INPUT_FLAGS == "enable":
+    if INPUTS_FLAG == "enable":
         command = command + " --inputs"
 
     if DOT_DIR == "enable":
