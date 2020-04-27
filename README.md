@@ -63,7 +63,7 @@ jobs:
 
 ``allow_link`` : ``enable`` Allow symbolic links
 
-Please refer to the [falwfinder doumentation](http://doc.gnu-darwin.org/flawfinder/) for further details.
+Please refer to the [flawfinder doumentation](http://doc.gnu-darwin.org/flawfinder/) for further details.
 
 ## License
 
