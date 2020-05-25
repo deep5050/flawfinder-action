@@ -1,7 +1,6 @@
 # flawfinder-action
 
-<img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/deep5050/flawfinder-action/total?style=flat-square">
-<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/deep5050/flawfinder-action?style=flat-square">
+<img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/deep5050/flawfinder-action/total?style=flat-square"><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/deep5050/flawfinder-action?style=flat-square">
 
 A simple Github Action that checks for security flaws in your C/C++ codes and generates a report.
 
