@@ -1,9 +1,10 @@
-# flawfinder-action
+<div align="center">
+  <p align="center"><a href="https://github.com/deep5050/flawfinder-action"><img src="https://i.imgur.com/96oxWx2.png" title="FlawFinder-Action" /></a></p>
+  <p align="center"><h3 align="center">A simple Github Action that checks for security flaws in your C/C++ codes and generates a report</h3></p>
+  </div>
 
-<img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/deep5050/flawfinder-action/total?style=flat-square">  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/deep5050/flawfinder-action?style=flat-square">
-[![HitCount](http://hits.dwyl.com/deep5050/flawfinder-action.svg)](http://hits.dwyl.com/deep5050/flawfinder-action)
 
-A simple Github Action that checks for security flaws in your C/C++ codes and generates a report.
+
 
 ## what is flawfinder?
 [flawfinder](http://doc.gnu-darwin.org/flawfinder/), a simple program that examines C/C++ source code and reports possible security weaknesses (“flaws”) sorted by risk level.
@@ -92,3 +93,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Thanks
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+
+Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
