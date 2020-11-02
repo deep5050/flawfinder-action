@@ -1,8 +1,4 @@
-<div align="center">
-  <p align="center"><a href="https://github.com/deep5050/flawfinder-action"><img src="https://i.imgur.com/96oxWx2.png" title="FlawFinder-Action" /></a></p>
-  <p align="center"><h3 align="center">A simple Github Action that checks for security flaws in your C/C++ codes and generates a report</h3></p>
-  </div>
-
+![flawfinder-action](https://socialify.git.ci/deep5050/flawfinder-action/image?description=1&descriptionEditable=A%20simple%20Github%20Action%20that%20checks%20for%20security%20flaws%20in%20your%20C%2FC%2B%2B%20codes%20and%20pushes%20the%20report%20back&font=Source%20Code%20Pro&logo=https%3A%2F%2Fi.imgur.com%2F96oxWx2.png&owner=1&pattern=Circuit%20Board&theme=Light)
 
 <p align=center>                           
   <img align=center  src="https://visitor-badge.laobi.icu/badge?page_id=deep5050.flawdinder-action" alt="Visitors">                     
